@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="sidebar">
+
+    <h2>Monitor</h2>
+
+    <p>🏠 Dashboard</p>
+
+    <p>💻 Equipamentos</p>
+
+    <p>👤 Usuários</p>
+
+    <p>📊 Relatórios</p>
+
+    <p>⚙ Configurações</p>
+
+</div>
+     
+<div class="content">
+
+    <h1>Dashboard de Monitoramento</h1>
+     
+    <div class="info-box">
+    <p><strong>Usuário:</strong> {{ nome }}</p>
+    <p><strong>IP:</strong> {{ ip }}</p>
+    <p><strong>Gateway:</strong> {{ gateway }}</p>
+    <p><strong>MAC do Gateway:</strong> {{ mac }}</p>
+</div>      
+
+    <div class="cards">
+
+       <div class="card">
+            <h2>Usuários</h2>
+            <p>{{ usuarios }}</p>
+       </div>
+
+       <div class="card">
+            <h2>Equipamentos</h2>
+            <p>{{ equipamentos }}</p>
+       </div>
+    
+       <div class="card">
+            <h2>Intelbras</h2>
+            <p>{{ intelbras }}</p>
+       </div>
+       <div class="card">
+            <h2>Alertas</h2>
+            <p>{{ alertas }}</p>
+       </div>
+    </div>
+    <h2>ARP da Rede</h2>
+
+    <pre>
+    {{ arp }} 
+    </pre>
+
+     <h2>Dispositivos encontrados</h2>
+
+<table>
+
+     <tr>
+
+        <th>IP</th>
+        <th>MAC</th>
+        <th>Tipo</th>
+        <th>Status</th>
+     </tr>
+ 
+     {% for dispositivo in dispositivos %}
+
+     <tr>
+      
+        <td>{{ dispositivo.ip }}</td>
+        <td>{{ dispositivo.mac }}</td>
+        <td>{{ dispositivo.tipo }}</td>
+        <td>{{ dispositivo.status }}</td>
+     </tr>
+     
+     
+      {% endfor %}
+       
+</table>
+
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+</body>
+
+</html>
+    
+
+    
+    
+    
+    
+                            
+    

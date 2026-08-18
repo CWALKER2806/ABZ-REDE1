@@ -1,0 +1,7 @@
+OMADA_URL = ""
+
+CLIENT_ID = ""
+
+CLIENT_SECRET = ""
+
+SITE_ID = ""
